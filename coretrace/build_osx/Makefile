@@ -1,8 +1,8 @@
 VPATH = ..
-CC = gcc
-CXX = g++
-CFLAGS = -fPIC -Wall -g -O3 -I../ 
-CXXFLAGS = $(CFLAGS)
+CC = gcc -mmacosx-version-min=10.9
+CXX = g++ -mmacosx-version-min=10.9
+CFLAGS = -fPIC -Wall -g -O3 -I../ -I../nlopt  -DWX_PRECOMP -O2 -arch x86_64  -fno-common
+CXXFLAGS = $(CFLAGS) -std=gnu++11
 
 OBJECTS = \
 	treemesh.o \
